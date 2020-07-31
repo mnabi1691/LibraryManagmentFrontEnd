@@ -1,0 +1,49 @@
+<div class="jumbotron">
+    <h1 class="display-3 text-center">User Request Detail</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-5" >
+            <table class="table table-hoverng table-sm">
+                <tr>
+                    <td>Request Id:</td><td>{{service.detail.RequestId}}</td>
+                </tr>
+                <tr>
+                    <td>First Name:</td><td>{{service.detail.FirstName}}</td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td><td>{{service.detail.LastName}}</td>
+                </tr>
+                <tr>
+                    <td>PassportNo:</td><td>{{service.detail.PassportNo}}</td>
+                </tr>
+                <tr>
+                    <td>Mobile No:</td><td>{{service.detail.MobileNo}}</td>
+                </tr>
+                <tr>
+                    <td>Request Time:</td><td>{{service.detail.RequestTime}}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td><td>{{service.detail.Email}}</td>
+                </tr>
+                <tr>
+                    <td>Date Of Birth:</td><td>{{service.detail.DateOfBirth}}</td>
+                </tr>
+                <tr>
+                    <td>User Request Status:</td><td>{{service.detail.UserRequestStatus}}</td>
+                </tr>
+                <tr>
+                    <td *ngIf="service.detail.UserRequestStatus == 'Email Verified'">
+                        <i 
+                        class="fa fa-check fa-lg text-success" 
+                        (click)="onUpdate(service.detail.RequestId,1)"></i>
+                      </td>
+                      <td *ngIf="service.detail.UserRequestStatus == 'Email Verified'">
+                        <i 
+                        class="fa fa-ban fa-lg text-danger" 
+                        (click)="onUpdate(service.detail.RequestId,0)"></i>
+                      </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

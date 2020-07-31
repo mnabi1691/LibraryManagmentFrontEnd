@@ -1,0 +1,26 @@
+<div class="jumbotron">
+    <h1 class="display-3 text-center">Library Users</h1>
+    <hr>
+    <div class="row">
+        <div *ngIf="!service.list">Loading...</div>
+       
+        <table *ngIf="service.list" class="table table-hoverng table-lg">
+            <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Status</th>
+            <th></th>
+            </tr>
+          <tr *ngFor="let  userDetail of service.list">
+            <td>{{ userDetail.FirstName }}</td>
+            <td>{{ userDetail.LastName }}</td>
+            <td>{{ userDetail.City }}</td>
+            <td>{{ userDetail.Country }}</td>
+            <td>{{ userDetail.AccountStatus }}</td>
+            <td (click)="populateForm(userDetail)">...</td>
+          </tr>
+        </table> 
+    </div>
+    </div>

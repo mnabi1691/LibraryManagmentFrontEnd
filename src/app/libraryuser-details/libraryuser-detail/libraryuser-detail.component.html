@@ -1,0 +1,65 @@
+<div class="jumbotron">
+    <h1 class="display-3 text-center">Library User Detail</h1>
+    <hr>
+    <div class="row">
+        <div *ngIf="!service.detail">Loading...</div>
+       
+        <div class="col-md-5" >
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+         <input type="hidden" name="UserId" [value]="service.detail.UserId">
+        <table class="table table-hoverng table-sm">
+            <tr>
+                <td>First Name:</td><td>{{service.detail.FirstName}}</td>
+            </tr>
+            <tr>
+                <td>Last Name:</td><td>{{service.detail.LastName}}</td>
+            </tr>
+            <tr>
+                <td>Nid no:</td><td>{{service.detail.Nidno}}</td>
+            </tr>
+            <tr>
+                <td>Passport No:</td><td>{{service.detail.PassportNo}}</td>
+            </tr>
+            <tr>
+                <td>Email:</td><td>{{service.detail.Email}}</td>
+            </tr>
+            <tr>
+                <td>Mobile No:</td><td>{{service.detail.MobileNo}}</td>
+            </tr>
+            <tr>
+                <td>Home Address:</td><td>{{service.detail.HomeAddress}}</td>
+            </tr>
+            <tr>
+                <td>City:</td><td>{{service.detail.City}}</td>
+            </tr>
+            <tr>
+                <td>Country:</td><td>{{service.detail.Country}}</td>
+            </tr>
+            <tr>
+                <td>User Name:</td><td>{{service.detail.Uname}}</td>
+            </tr>
+            <tr>
+                <td>Date Of Birth:</td><td>{{service.detail.DateOfBirth}}</td>
+            </tr>
+            <tr>
+                <td>Active On:</td><td>{{service.detail.ActiveOn}}</td>
+            </tr>
+            <tr>
+                <td>Account Status:</td>
+                <td>
+                    <div class="form-group">
+                        <select name="AccountStatus" class="form-control" [(ngModel)]="this.service.detail.AccountStatus" (change)="filterStatus($event.target.value)">
+                            <option value="Active">Active</option>
+                            <option value="Locked">Locked</option>
+                          </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <button class="btn btn-primary btn-sm btn-block" type="submit" [disabled]="form.invalid">Update</button>
+            </tr>
+            </table>
+            </form>
+            </div>
+            </div>
+

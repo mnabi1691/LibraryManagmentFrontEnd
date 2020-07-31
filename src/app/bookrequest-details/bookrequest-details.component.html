@@ -1,0 +1,30 @@
+<div class="jumbotron">
+    <h1 class="display-3 text-center">Book Requests</h1>
+    <hr>
+    <div class="row">
+        <div *ngIf="!service.list">Loading...</div>
+       
+        <table *ngIf="service.list" class="table table-hoverng table-lg">
+            <tr>
+            <th>Request Token</th>
+            <th>Requested Book</th>
+            <th>Requested By</th>
+            <th>Request Time</th>
+            <th>Process Time</th>
+            <th>Book Return Time</th>
+            <th>Status</th>
+            <th></th>
+            </tr>
+          <tr *ngFor="let  bookRequestDetail of service.list">
+            <td>{{ bookRequestDetail.RequestToken }}</td>
+            <td>{{ bookRequestDetail.Book.Tittle }}</td>
+            <td>{{ bookRequestDetail.User.Uname }}</td>
+            <td>{{ bookRequestDetail.RequestTime }}</td>
+            <td>{{ bookRequestDetail.ProcessTime }}</td>
+            <td>{{ bookRequestDetail.BookReturnTime }}</td>
+            <td>{{ bookRequestDetail.Rstatus }}</td>
+            <td (click)="populateForm(bookRequestDetail)">...</td>
+          </tr>
+        </table> 
+    </div>
+    </div>

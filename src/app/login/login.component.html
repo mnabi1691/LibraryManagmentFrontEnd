@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <h6 class="display-12">Login:</h6>
+    <div class="row">
+        <div class="col-md-4">
+          <form #form='ngForm' autocomplete="off" (submit)="onSubmit(form)">
+            <div class="form-row">
+            <div class="form-group">
+              <input class="form-control" #Uname="ngModel" name="Uname" [(ngModel)]="formModel.Uname" placeholder="User Name" required>
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="form-group">
+               <input type="password" class="form-control" #Upassword="ngModel" name="Upassword" [(ngModel)]="formModel.Upassword" placeholder="Password" required>
+            </div>
+            </div>
+            <div class="form-row">
+             <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-sm btn-block" [disabled]="form.invalid">Login</button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+</div>
+

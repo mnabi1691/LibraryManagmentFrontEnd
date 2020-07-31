@@ -1,0 +1,12 @@
+<div *ngIf="!service.list">Loading...</div>
+<table class="table table-hoverng table-sm">
+  <tr *ngFor="let  administratorDetail of service.list">
+    <td>{{ administratorDetail.FirstName }} {{ administratorDetail.LastName }}</td>
+    <td (click)="populateForm(administratorDetail)">...</td>
+    <td>
+      <i 
+      class="far fa-trash-alt fa-lg text-danger" 
+      (click)="onDelete(administratorDetail.AdminId)"></i>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,15 @@
+<div *ngIf="!service.list">Loading...</div>
+
+
+<table class="table table-hoverng table-sm">
+  <tr *ngFor="let  bookDetail of service.list">
+    <td>{{ bookDetail.Tittle }}</td>
+    <td>{{ bookDetail.Pub.PublisherName}}</td>
+    <td (click)="populateForm(bookDetail)">...</td>
+    <td>
+      <i 
+      class="far fa-trash-alt fa-lg text-danger" 
+      (click)="onDelete(bookDetail.BookId)"></i>
+    </td>
+  </tr>
+</table>

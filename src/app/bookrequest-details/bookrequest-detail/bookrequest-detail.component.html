@@ -1,0 +1,45 @@
+<div class="jumbotron">
+    <h1 class="display-3 text-center">Book Request Detail</h1>
+    <hr>
+    <div class="row">
+        <div *ngIf="!service.detail">Loading...</div>
+       
+        <div class="col-md-5" >
+        <table class="table table-hoverng table-sm">
+            <tr>
+                <td>Request Token:</td><td>{{service.detail.RequestToken}}</td>
+            </tr>
+            <tr>
+                <td>Book Title:</td><td>{{service.detail.Book.Tittle}}</td>
+            </tr>
+            <tr>
+                <td>Requested By:</td><td>{{service.detail.User.Uname}}</td>
+            </tr>
+            <tr>
+                <td>Request Time:</td><td>{{service.detail.RequestTime}}</td>
+            </tr>
+            <tr>
+                <td>Process Time:</td><td>{{service.detail.ProcessTime}}</td>
+            </tr>
+            <tr>
+                <td *ngIf="service.detail.Rstatus == 'Requested'">
+                    <i 
+                    class="fa fa-check fa-lg text-success" 
+                    (click)="onUpdate(service.detail.RequestId,1)"></i>
+                  </td>
+                  <td *ngIf="service.detail.Rstatus == 'Requested'">
+                    <i 
+                    class="fa fa-ban fa-lg text-danger" 
+                    (click)="onUpdate(service.detail.RequestId,0)"></i>
+                  </td>
+                  <td *ngIf="service.detail.Rstatus == 'Cehcked Out'">
+                    <i 
+                    class="fa fa-undo fa-lg" 
+                    (click)="onUpdate(service.detail.RequestId,2)"></i>
+                  </td>
+            </tr>
+            </table>
+            </div>
+            </div>
+        </div>
+

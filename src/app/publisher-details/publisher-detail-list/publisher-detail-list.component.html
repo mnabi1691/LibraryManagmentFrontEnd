@@ -1,0 +1,16 @@
+<div *ngIf="!service.list">Loading...</div>
+
+
+<table class="table table-hoverng table-sm">
+  <tr *ngFor="let  publisherDetail of service.list">
+    <td>{{ publisherDetail.PublisherName }}</td>
+    <td>{{ publisherDetail.City }}</td>
+    <td>{{ publisherDetail.Country }}</td>
+    <td (click)="populateForm(publisherDetail)">...</td>
+    <td>
+      <i 
+      class="far fa-trash-alt fa-lg text-danger" 
+      (click)="onDelete(publisherDetail.PublisherId)"></i>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,41 @@
+<div class="jumbotron">
+    <h1 class="display-3 text-center">User Requests</h1>
+    <hr>
+    <div class="row">
+        <div *ngIf="!service.list">Loading...</div>
+       
+        <table *ngIf="service.list" class="table table-hoverng table-lg">
+            <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>NID No</th>
+            <th>Email</th>
+            <th>DateOfBirth</th>
+            <th>HomeAddress</th>
+            <th>RequestTime</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let  userRequestDetail of service.list">
+            <td (click)="populateForm(userRequestDetail)">{{ userRequestDetail.FirstName }}</td>
+            <td>{{ userRequestDetail.LastName }}</td>
+            <td>{{ userRequestDetail.Nidno }}</td>
+            <td>{{ userRequestDetail.Email }}</td>
+            <td>{{ userRequestDetail.DateOfBirth }}</td>
+            <td>{{ userRequestDetail.HomeAddress }}</td>
+            <td>{{ userRequestDetail.RequestTime }}</td>
+            <td *ngIf="userRequestDetail.UserRequestStatus == 'Email Verified'">
+              Approve or reject 
+            </td>
+            <td *ngIf="userRequestDetail.UserRequestStatus == 'Approved'">
+              {{ userRequestDetail.UserRequestStatus }}
+            </td>
+            <td *ngIf="userRequestDetail.UserRequestStatus == 'Rejected'">
+              {{ userRequestDetail.UserRequestStatus }}
+            </td>
+            <th></th>
+            <!-- <td (click)="populateForm(bookRequestDetail)">...</td> -->
+          </tr>
+        </table> 
+    </div>
+    </div>

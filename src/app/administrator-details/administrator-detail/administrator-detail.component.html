@@ -1,0 +1,65 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="AdminId" [value]="service.formData.AdminId">
+    <div class="form-group">
+      <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName" class="form-control"
+             placeholder="First Name" required>
+    </div>
+    <div class="form-group">
+      <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName" class="form-control"
+             placeholder="Last Name" required>
+    </div>
+    <div class="form-group">
+        <input name="Nidno" #Nidno="ngModel" [(ngModel)]="service.formData.Nidno" class="form-control"
+                placeholder="NID No" required>
+    </div>
+    <div class="form-group">
+        <input name="PassportNo" #PassportNo="ngModel" [(ngModel)]="service.formData.PassportNo" class="form-control"
+                placeholder="Passport No" required>
+    </div>
+    <div class="form-group">
+        <input name="Email" #Email="ngModel" [(ngModel)]="service.formData.Email" class="form-control"
+                placeholder="Email Address" required>
+    </div>
+    <div class="form-group">
+        <input name="MobileNo" #MobileNo="ngModel" [(ngModel)]="service.formData.MobileNo" class="form-control"
+              placeholder="Mobile No" required>
+    </div>
+    <div class="form-group">
+        <input name="HomeAddress" #HomeAddress="ngModel" [(ngModel)]="service.formData.HomeAddress" class="form-control"
+               placeholder="Home Address" required>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-5">
+      <input name="City" #City="ngModel" [(ngModel)]="service.formData.City" class="form-control"
+             placeholder="City" required>
+    </div>
+    </div>
+    <div class="form-group">
+      <input name="Country" #Country="ngModel" [(ngModel)]="service.formData.Country" class="form-control"
+             placeholder="country" required>
+    </div>
+    <div class="form-group">
+        <input name="Uname" #Uname="ngModel" [(ngModel)]="service.formData.Uname" class="form-control"
+               placeholder="user name" required>
+    </div>
+    <div class="form-group">
+        <input name="Upassword" type="password" #Upassword="ngModel" [(ngModel)]="service.formData.Upassword" class="form-control"
+               placeholder="password" required>
+    </div>
+    <div class="form-group">
+        <input name="AccountStatus" #AccountStatus="ngModel" [(ngModel)]="service.formData.AccountStatus" class="form-control"
+               placeholder="Account Status" required>
+    </div>
+    <div class="form-group">
+        <input type="number"name="AdminLevel" #AdminLevel="ngModel" [(ngModel)]="service.formData.AdminLevel" class="form-control"
+               placeholder="Admin Level" required>
+    </div>
+    <div class="form-row">
+ <div class="form-group col-md-7">
+    <button class="btn btn-primary btn-sm btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+    </div>
+    <div class="form-group col-md-5">
+      <button class="btn btn-secondary btn-sm btn-block" type="button" [disabled]="form.invalid" (click)="reset()">Clear</button>
+      </div>  
+    </div>
+  </form>
